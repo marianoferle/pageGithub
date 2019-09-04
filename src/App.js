@@ -5,6 +5,8 @@ import HeaderIndex from './componentes/Header_titulo';
 import Contenido1 from './componentes/Contenido';
 import Formulario1 from './componentes/Formulario';
 import VerDatos from './componentes/verDatos';
+import PostDatos from './componentes/Post_';
+
 //-json----------
 import datos from './data_/datos_.json';
 //console.log(datos);
@@ -56,6 +58,7 @@ class App extends Component{
             activarDato={this.activarTexto} 
         />
         <Formulario1 agregarTexto={this.agregarTexto}/>
+        <PostDatos/>
       </Fragment>   
     );
   }//---render
