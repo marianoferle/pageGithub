@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import '../css/style_.css';
 
-class Contenido_ extends Component{
+//--------------defir class y la exportar---------
+export default class Contenido_ extends Component{
   StyleFunction(){
     return{
       color:'#000',
@@ -9,14 +10,16 @@ class Contenido_ extends Component{
     }
   }
   render(){
+    const subtitulo_={'fontSize':'40px'}
+
     return(
       <Fragment>  
           <div className='contenido_content'>
             oijijijji   
-            <h2 className='subtitulo_'>subtitulo</h2>   
+            <h2 className={subtitulo_}>subtitulo</h2>   
             <div style={this.StyleFunction()}>
-            Texto...
-          </div>       
+              Texto...
+            </div>       
           </div> 
            
       </Fragment>
@@ -24,10 +27,6 @@ class Contenido_ extends Component{
   }//---render
 }//--class
 
-const subtitulo_={
-  fontSize:'40px'
-}
 
-export default Contenido_;
 
 
