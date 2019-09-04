@@ -1,9 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import '../css/style_.css';
 
-//----validar tipo de dato----------
-import PropTypes from 'prop-types';
-
 
 class Formulario_ extends Component{
   state = {
@@ -19,7 +16,6 @@ class Formulario_ extends Component{
     this.props.agregarTexto(this.state.titulo,this.state.descripcion);
     e.preventDefault();
   }
-
 
   //---onChange---
   escribirTexto = e =>{
@@ -51,22 +47,13 @@ class Formulario_ extends Component{
               value={this.state.descripcion}              
             ></textarea>
            <input type="submit" value="enviar"/>
-         </form>
-
-        <div>
-          <h3>{this.props.datos.titulo}</h3>      
-          <h3>{this.props.datos.descripcion}</h3>    
-          <h3>{this.props.datos.id}</h3>
-        </div>           
+         </form>         
       </Fragment>
     );
   }//---render
 }//--class
 
 
-Formulario_.propTypes={ //p minuscula
-  datos: PropTypes.array.isRequired, //P mayuscula
-}
 
 
 export default Formulario_;
