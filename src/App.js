@@ -28,8 +28,20 @@ class App extends Component{
     //console.log('json', datos);
   }
 
-  eliminarTexto = () =>{
-    
+  eliminarTexto = (id) =>{
+    const nuevoTexto = this.state.datos.filter(dat => dat.id !== id);
+    this.setState({datos:nuevoTexto});
+  }
+
+  //---activo---
+  activarTexto = id => {
+    const nuevoTexto = this.state.datos.map(dat => {
+        if(dat.id === id){
+          dat.activo = !dat.activo;
+        }
+        return dat;
+    });
+    this.setState({datos:nuevoTexto});
   }
   
   render(){
@@ -38,8 +50,12 @@ class App extends Component{
       <Fragment> 
         <HeaderIndex titulo="GitHub Index" edad={32} />  
         <Contenido1/>
+        <VerDatos 
+            datos={this.state.datos} 
+            eliminarDato={this.eliminarTexto} 
+            activarDato={this.activarTexto} 
+        />
         <Formulario1 agregarTexto={this.agregarTexto}/>
-        <VerDatos datos={this.state.datos} />
       </Fragment>   
     );
   }//---render

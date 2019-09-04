@@ -7,7 +7,14 @@ import PropTypes from 'prop-types';
 
 class VerDatos extends Component{  
   render(){   
-    return this.props.datos.map(dato_=> <VerDato dato={dato_} key={dato_.id}/>);
+    return this.props.datos.map(dato_=> 
+        <VerDato 
+            dato={dato_} 
+            key={dato_.id} 
+            eliminar_={this.props.eliminarDato}
+            activar_ ={this.props.activarDato}
+        />
+    );
       
   }//---render
 }//--class
