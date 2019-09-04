@@ -6,10 +6,10 @@ class Header_ extends Component{
     const {titulo} = this.props;
     const colorNegro = {color:'#fff'};
     return(
-      <Fragment>  
+      <Fragment>            
           <h1 style={colorNegro} className="contenido_header">
-            {titulo}
-          </h1>   
+            {titulo}           
+          </h1>            
       </Fragment>
     );
   }//---render
